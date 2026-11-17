@@ -65,9 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <?php if ($success): ?>
             <p class="alert alert-success">Student added successfully!</p>
-        <?php endif; ?>
-
-        <?php if (!empty($errors)): ?>
+        <?php elseif (!empty($errors)): ?>
             <div class="alert alert-error">
                 <ul>
                     <?php foreach ($errors as $error): ?>
@@ -77,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
         <?php endif; ?>
 
-        <form method="POST" action="create.php" class="grade-form">
+        <form method="POST" action="create.php" class="grade-form" novalidate>
             <label for="student_id">Student ID</label>
             <input type="number" id="student_id" name="student_id" value="<?= htmlspecialchars($_POST['student_id'] ?? '') ?>" required>
 

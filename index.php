@@ -1,5 +1,5 @@
 <?php
-// view.php - List all student records
+// index.php - List all student records
 
 require "db.php";
 
